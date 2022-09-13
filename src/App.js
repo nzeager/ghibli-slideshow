@@ -10,12 +10,13 @@ function App() {
 
   return (
     <div className="slides-app">
-      <FilmDetail filmObj={filmData[filmIndex]} filmIndex={filmIndex} setFilmIndex={setFilmIndex} len={len} />
+      <FilmDetail filmObj={filmData[filmIndex]} />
+      <Buttons filmIndex={filmIndex} setFilmIndex={setFilmIndex} len={len} />
     </div>
   )
 }
 
-const FilmDetail = ({ filmObj, filmIndex, setFilmIndex, len }) => {
+const FilmDetail = ({ filmObj}) => {
   return (
     <>
       <div className='title'> {filmObj.title } </div>
@@ -27,30 +28,36 @@ const FilmDetail = ({ filmObj, filmIndex, setFilmIndex, len }) => {
           <div className='description'> {filmObj.description } </div>
         </div>
       </div>
-      <div className='buttons'>
-        <button
-          onClick={() => {
-            setFilmIndex(0)
-          }}
-          disabled={filmIndex===0}
-        > Start Over </button>
-        <button
-          onClick={() => {
-            setFilmIndex(filmIndex-1)
-          
-          }}
-          disabled={filmIndex===0}
-        > Back </button>
-        <button
-          onClick={() => {
-            setFilmIndex(filmIndex+1)
-          }}
-          disabled={filmIndex===len-1}
-        > Next </button>
-      </div>
     </>
   )
 }
+
+const Buttons = ({ filmObj, filmIndex, setFilmIndex, len }) => {
+  return (
+    <div className='buttons'>
+      <button
+        onClick={() => {
+          setFilmIndex(0)
+        }}
+        disabled={filmIndex===0}
+      > Start Over </button>
+      <button
+        onClick={() => {
+          setFilmIndex(filmIndex-1)
+        
+        }}
+        disabled={filmIndex===0}
+      > Back </button>
+      <button
+        onClick={() => {
+          setFilmIndex(filmIndex+1)
+        }}
+        disabled={filmIndex===len-1}
+      > Next </button>
+    </div>
+  )
+}
+
 
 
 export default App
