@@ -1,0 +1,41 @@
+.title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .image-info {
+    width: 20rem;
+}
+
+.image-info img {
+    width:100%;
+}
+
+.written-info {
+    width: 55rem
+}
+
+.original-title {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+.release {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.buttons {
+    text-align: center;
+}
