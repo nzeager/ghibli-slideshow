@@ -69,7 +69,7 @@ const Pagination = ({ filmIndex, setFilmIndex, len }) => {
       }}
       ><i class="material-icons">chevron_left</i></a></li>
       {Array(len).fill(0).map((el, index) => {
-        return <li class={filmIndex === index ? "active" : "waves-effect"}><a href="#!" onClick={() => setFilmIndex(index)}>{index}</a></li>
+        return <li class={filmIndex === index ? "active" : "waves-effect"}><a href="#!" onClick={() => setFilmIndex(index)}>{index+1}</a></li>
       })}
       <li class={filmIndex === len-1 ? "disabled" : "waves-effect"}><a href="#!"
       onClick={() => {
