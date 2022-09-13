@@ -1,3 +1,4 @@
+import './materialize.css'
 import './App.css'
 import {useState} from 'react'
 import { filmData } from './film-data'
@@ -12,6 +13,7 @@ function App() {
     <div className="slides-app">
       <FilmDetail filmObj={filmData[filmIndex]} />
       <Buttons filmIndex={filmIndex} setFilmIndex={setFilmIndex} len={len} />
+      <Pagination filmIndex={filmIndex} setFilmIndex={setFilmIndex} len={len} />
     </div>
   )
 }
@@ -32,7 +34,7 @@ const FilmDetail = ({ filmObj}) => {
   )
 }
 
-const Buttons = ({ filmObj, filmIndex, setFilmIndex, len }) => {
+const Buttons = ({ filmIndex, setFilmIndex, len }) => {
   return (
     <div className='buttons'>
       <button
@@ -55,6 +57,26 @@ const Buttons = ({ filmObj, filmIndex, setFilmIndex, len }) => {
         disabled={filmIndex===len-1}
       > Next </button>
     </div>
+  )
+}
+
+const Pagination = ({ filmIndex, setFilmIndex, len }) => {
+  return (
+    <ul class="pagination">
+      <li class={filmIndex === 0 ? "disabled" : "waves-effect"}><a href="#!"
+      onClick={() => {
+        filmIndex === 0 ? setFilmIndex(filmIndex) : setFilmIndex(filmIndex-1)
+      }}
+      ><i class="material-icons">chevron_left</i></a></li>
+      {Array(len).fill(0).map((el, index) => {
+        return <li class={filmIndex === index ? "active" : "waves-effect"}><a href="#!" onClick={() => setFilmIndex(index)}>{index}</a></li>
+      })}
+      <li class={filmIndex === len-1 ? "disabled" : "waves-effect"}><a href="#!"
+      onClick={() => {
+        filmIndex === len-1 ? setFilmIndex(filmIndex) : setFilmIndex(filmIndex+1)
+      }}
+      ><i class="material-icons">chevron_right</i></a></li>
+    </ul>
   )
 }
 
