@@ -1,5 +1,17 @@
 # React Slideshow
 
+## Momentum Boot Camp Project 12
+
+Skills:
+
+- Allow users to progress through a set of data one item at a time
+- Using click events in React
+- Disable buttons as appropriate
+- Allow users to start over from the first item
+- Pagination links that allow users to skip to any item
+
+## Below are Project Directions
+
 For this project you will build a component that allows a user to progress through a set of data, one item at a time.
 
 The user will be able to navigate through a slideshow showing information about the films of Hayao Miyazaki.
